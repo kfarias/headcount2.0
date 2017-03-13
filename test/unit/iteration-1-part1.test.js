@@ -2,7 +2,7 @@ import DistrictRepository from '../../src/DistrictRepository.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
 describe('DistrictRepository iteration 1 - part 1', () =>  {
-  const district = new DistrictRepository(kinderData);
+  // const district = new DistrictRepository(kinderData);
 
   it.skip('findByName returns undefined if no arguments are provided', () => {
     expect(district.findByName()).toBe(undefined);
@@ -23,7 +23,6 @@ describe('DistrictRepository iteration 1 - part 1', () =>  {
     expect(district.findByName('ACADEmY 20').location).toEqual('ACADEMY 20');
   });
 
-// taylor --> what does this it actually look for?
   it.skip('each district has a data object containing each year and its data as key value pairs.', () => {
     const academy = district.findByName('ACADEmY 20');
 
