@@ -1,21 +1,22 @@
 
 class DistrictRepository {
  constructor(data){
-   this.data = data;
+   this.data = this.dataByLocation(data);
  }
  dataByLocation(data){
-  const schools = data.reduce((object, district) => {
-    let location = district.Location;
+  return data.reduce((object, district) => {
+    const location = district.Location;
+    const timeFrame = district.TimeFrame;
+    const objData = district.Data;
+
      if(!object[location]){
-       object[location];
+       object[location] = {};
      }
-    //  } else {
-    //     object[location].push(district)
-    //    }
+     object[location][timeFrame] = objData;
+     return object;
    }, {})
-   return schools;
-   this.data = schools;
  }
 }
+
 
 export default DistrictRepository;
