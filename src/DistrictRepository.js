@@ -13,8 +13,12 @@ class DistrictRepository {
       if(!object[location]){
         object[location] = {'location': location, 'data': {} };
       }
+      if((typeof objData) === 'number'){
+      object[location].data[timeFrame] = Math.round(1000 * objData)/1000
+    } else {
+      object[location].data[timeFrame] = 0
+    }
 
-      object[location].data[timeFrame] = objData
 
       return object;
     }, {})
@@ -32,6 +36,9 @@ class DistrictRepository {
       }
     })
     return this.data[upperCaseKeys]
+  }
+  sanitizeData() {
+
   }
 }
 
