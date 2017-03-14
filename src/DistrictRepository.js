@@ -14,7 +14,7 @@ class DistrictRepository {
         object[location] = {'location': location, 'data': {} };
       }
 
-      object[location].data[timeFrame] = objData
+      object[location].data[timeFrame] = Math.round(1000 * objData)/1000
 
       return object;
     }, {})
@@ -32,6 +32,11 @@ class DistrictRepository {
       }
     })
     return this.data[upperCaseKeys]
+  }
+  roundData(input) {
+    // const roundedInput = (district.data[input].data[0]);
+
+
   }
 }
 
