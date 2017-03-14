@@ -16,15 +16,22 @@ class DistrictRepository {
 
       object[location].data[timeFrame] = objData
 
-      //need to add "Location" as key and location as value
-      //need to add "Data" as key and timeFrame and objData as value
-      // object[location][data] = objData;
       return object;
     }, {})
   }
 
-  findByName(filteredData){
-    return this.data[filteredData]
+  findByName(input){
+    const keys = Object.keys(this.data)
+    if(!input) {
+      return undefined
+    }
+    const upperCaseInput = input.toUpperCase();
+    const upperCaseKeys = keys.filter((location, index) => {
+        if(upperCaseInput === location.toUpperCase()) {
+        return keys[index]
+      }
+    })
+    return this.data[upperCaseKeys]
   }
 }
 
