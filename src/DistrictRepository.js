@@ -16,7 +16,6 @@ class DistrictRepository {
 
       //need to add "Location" as key and location as value
       //need to add "Data" as key and timeFrame and objData as value
-      object[location][timeFrame] = objData;
       return object;
     }, {})
   }
