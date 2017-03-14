@@ -13,8 +13,12 @@ class DistrictRepository {
       if(!object[location]){
         object[location] = {'location': location, 'data': {} };
       }
-
+      if((typeof objData) === 'number'){
       object[location].data[timeFrame] = Math.round(1000 * objData)/1000
+    } else {
+      object[location].data[timeFrame] = 0
+    }
+
 
       return object;
     }, {})
@@ -33,9 +37,7 @@ class DistrictRepository {
     })
     return this.data[upperCaseKeys]
   }
-  roundData(input) {
-    // const roundedInput = (district.data[input].data[0]);
-
+  sanitizeData() {
 
   }
 }
