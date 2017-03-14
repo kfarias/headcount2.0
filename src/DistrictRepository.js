@@ -11,19 +11,20 @@ class DistrictRepository {
       const objData = district.Data;
 
       if(!object[location]){
-        object[location] = {'location': location };
+        object[location] = {'location': location, 'data': {} };
       }
+
+      object[location].data[timeFrame] = objData
 
       //need to add "Location" as key and location as value
       //need to add "Data" as key and timeFrame and objData as value
-      object[location][timeFrame] = objData;
+      // object[location][data] = objData;
       return object;
     }, {})
   }
 
   findByName(filteredData){
     return this.data[filteredData]
-
   }
 }
 
