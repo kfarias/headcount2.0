@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import './reset.css';
 
+import Card from '../Card/Card'
 import CardWrapper from '../CardWrapper/CardWrapper';
 import Search from '../Search/Search';
 
@@ -12,22 +13,19 @@ import kinderData from '../../data/kindergartners_in_full_day_program.js';
 class App extends Component {
   constructor() {
     super()
-    this.districtRepo = new DistrictRepository(kinderData)
-    this.state = {
-      currentSearch: this.districtRepo.findAllMatches()
     }
-    this.handleInputSearch = this.handleInputSearch.bind(this)
-  }
+
+
+
+
   render() {
+    const data = new DistrictRepository(kinderData).data;
     return (
       <div className='header'>
         <h1>Welcome To Headcount 2.0</h1>
-        <CardWrapper/>
+        <CardWrapper kindergartnerData={data}/>
       </div>
     );
-  }
-  handleInputSearch(input) {
-    this.setState({ currentSearch: input })
   }
 }
 
