@@ -14,10 +14,10 @@ class DistrictRepository {
         object[location] = {'location': location, 'data': {} };
       }
       if((typeof objData) === 'number'){
-      object[location].data[timeFrame] = Math.round(1000 * objData)/1000
-    } else {
-      object[location].data[timeFrame] = 0
-    }
+        object[location].data[timeFrame] = Math.round(1000 * objData)/1000
+      } else {
+        object[location].data[timeFrame] = 0
+      }
 
 
       return object;
@@ -31,7 +31,7 @@ class DistrictRepository {
     }
     const upperCaseInput = input.toUpperCase();
     const upperCaseKeys = keys.filter((location, index) => {
-        if(upperCaseInput === location.toUpperCase()) {
+      if(upperCaseInput === location.toUpperCase()) {
         return keys[index]
       }
     })
@@ -44,16 +44,11 @@ class DistrictRepository {
     if(!input){
       return keys;
     }
-    const upperCaseInput = input.toUpperCase()
-    const dataArray = []
 
-    const upperCaseKeys = keys.filter((location) => {
-      location.toUpperCase().indexOf(upperCaseInput) > -1;
-
-      // if(location.toUpperCase().includes(upperCaseInput)) {
-      //   emptyArray[location]
-      // }
-    })
+    const upperCaseKeys = keys.filter(object => {
+      return object.location.toUpperCase().indexOf(input.toUpperCase()) > -1;
+    });
+    return upperCaseKeys
   }
 }
 
