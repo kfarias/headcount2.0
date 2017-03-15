@@ -1,11 +1,11 @@
 
 class DistrictRepository {
-  constructor(data){
-    this.data = this.dataByLocation(data);
+  constructor(file){
+    this.data = this.dataByLocation(file);
   }
 
-  dataByLocation(data){
-    return data.reduce((object, district) => {
+  dataByLocation(file){
+    return file.reduce((object, district) => {
       const location = district.Location;
       const timeFrame = district.TimeFrame;
       const objData = district.Data;
@@ -14,9 +14,9 @@ class DistrictRepository {
         object[location] = {'location': location, 'data': {} };
       }
       if((typeof objData) === 'number'){
-        object[location].data[timeFrame] = Math.round(1000 * objData)/1000
+        object[location]['data'][timeFrame] = Math.round(1000 * objData)/1000
       } else {
-        object[location].data[timeFrame] = 0
+        object[location]['data'][timeFrame] = 0
       }
 
 
