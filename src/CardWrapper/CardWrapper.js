@@ -4,24 +4,25 @@ import DistrictRepository from '../DistrictRepository';
 
 import './CardWrapper.css';
 
-const CardWrapper = ({ kindergartnerData, i }) => {
-  const kinderKeysData = Object.keys(kindergartnerData);
-  console.log(kinderKeysData)
-  const filteredKinderData = kinderKeysData.map((value, i) => {
-    console.log(value.location);
+const CardWrapper = ({ kindergartnerData }) => {
+  console.log(kindergartnerData)
+  const kinderKeysData = Object.keys(kindergartnerData).map((value, i) => {
+    console.log(value)
 
     return(
       <div key={i}>
-        {/* <Card key={i} location={value} data={kindergartnerData.value}/> */}
+        {/* <Card key={i} location={value} data={value}/> */}
         <p>{value}</p>
         <p></p>
-        <p>Data</p>
+        <p></p>
 
       </div>
     )
+
   })
+
   return(
-  <section>{filteredKinderData}</section>
+    <section>{kinderKeysData}</section>
   )
 }
 
