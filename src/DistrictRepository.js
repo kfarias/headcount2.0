@@ -37,8 +37,23 @@ class DistrictRepository {
     })
     return this.data[upperCaseKeys]
   }
-  sanitizeData() {
 
+  findAllMatches(input){
+    const keys = Object.values(this.data)
+
+    if(!input){
+      return keys;
+    }
+    const upperCaseInput = input.toUpperCase()
+    const dataArray = []
+
+    const upperCaseKeys = keys.filter((location) => {
+      location.toUpperCase().indexOf(upperCaseInput) > -1;
+
+      // if(location.toUpperCase().includes(upperCaseInput)) {
+      //   emptyArray[location]
+      // }
+    })
   }
 }
 
