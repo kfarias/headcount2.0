@@ -11,7 +11,6 @@ describe('DistrictRepository iteration 0', () =>  {
 
   it('data coming in has no duplicates', () => {
     const district = new DistrictRepository(kinderData);
-    console.log(district.data);
     expect(Object.keys(district.data).length).toBe(181);
   });
 
