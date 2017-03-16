@@ -19,7 +19,7 @@ class Search extends Component {
   render(){
     return(
       <navbar>
-        <input placeholder='Enter a school district'
+        <input className='search-input' placeholder='Enter a school district'
           type='text' onChange={this.handleChange.bind(this)}></input>
         </navbar>
       )
