@@ -1,0 +1,10 @@
+.yearly-data {
+  background-color: lime;
+  font-size: 1.25em;
+}
+
+.kinder-year-data {
+  width: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
