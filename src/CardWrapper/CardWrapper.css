@@ -1,0 +1,11 @@
+.location-data {
+  background-color: lime;
+  font-size: 2em;
+  text-align: center;
+}
+
+.individual-card {
+  display: flex;
+  flex-direction: column;
+  padding:15px;
+}
