@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
-
+import DistrictRepository from '../DistrictRepository';
 import './Search.css';
 
 class Search extends Component {
-  constructor() {
+  constructor({ searchData, DistrictRepository }) {
     super()
     this.state = {
-      location: '',
+      input: '',
     }
   }
 
   handleChange(e){
-    this.setState({ location: e.target.value });
-    console.log(this.state)
+    this.setState({ input: e.target.value });
+    // grabCard()
+  }
+
+  grabCard(searchData) {
+    searchData.findAllMatches(this.state.input);;
+    //take the input and compare it to our locations
+    //display locations that match/return true
   }
 
   render(){

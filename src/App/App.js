@@ -15,9 +15,6 @@ class App extends Component {
     super()
     }
 
-
-
-
   render() {
     const data = new DistrictRepository(kinderData).data;
     return (
