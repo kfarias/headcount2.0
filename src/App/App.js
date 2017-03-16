@@ -15,15 +15,12 @@ class App extends Component {
     super()
     }
 
-
-
-
   render() {
     const data = new DistrictRepository(kinderData).data;
     return (
       <div className='header'>
         <h1>Welcome To Headcount 2.0</h1>
-        <Search onChange={(e) => this.handleChange(e)}/>
+        <Search onChange={(e) => this.handleChange(e) } searchData={data}/>
         <CardWrapper kindergartnerData={data}/>
       </div>
     );
