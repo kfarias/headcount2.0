@@ -1,11 +1,18 @@
-.location-data {
-  background-color: lime;
+/*.location-data {
+  background-color: #EFEFEF;
   font-size: 2em;
   text-align: center;
-}
-
+}*/
+/*
 .individual-card {
   display: flex;
   flex-direction: column;
   padding:15px;
+  border-style: solid;
+}*/
+
+.card-wrapper {
+text-align: center;
+margin: 20px;
+background-color: lime;
 }
