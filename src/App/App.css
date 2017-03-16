@@ -1,14 +1,9 @@
+.body {
+  background-color: #EFEFEF;
+}
+
 .welcome {
   text-align: center;
   font-size: 2.5em;
-  padding-top:15px;
-}
-
-.test {
-  border: 2px solid black;
-}
-
-.card-list {
-  display:flex;
-  flex-flow: row;
+  padding-top:20px;
 }

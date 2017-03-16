@@ -5,12 +5,12 @@ const Card = ({ location, data }) => {
   const kinderYearData = Object.keys(data).map((year, i) => {
     return (
       <div key={i}>
-        <p className="yearly-data">{year} : {data[year]}</p>
+        <p className='yearly-data'>{year} : {data[year]}</p>
       </div>
     )
   })
   return(
-    <section className="kinder-year-data">{kinderYearData}</section>
+    <section className='kinder-year-data'>{kinderYearData}</section>
   )
 
 }

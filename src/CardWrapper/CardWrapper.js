@@ -9,8 +9,8 @@ const CardWrapper = ({ kindergartnerData }) => {
   const kinderKeysData = Object.keys(kindergartnerData).map((value, i) => {
 
     return(
-      <div key={i} className="individual-card">
-        <div className="location-data">{value}</div>
+      <div key={i} className='card-wrapper'>
+        <div className='location-data'>{value}</div>
         <Card location={ value } data={kindergartnerData[value].data}/>
       </div>
     )
