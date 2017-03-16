@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div className='header'>
         <h1>Welcome To Headcount 2.0</h1>
-        <Search/>
+        <Search onChange={(e) => this.handleChange(e)}/>
         <CardWrapper kindergartnerData={data}/>
       </div>
     );
