@@ -1,18 +1,16 @@
 import React from 'react';
-import './Card.css'
-
-
+import styles from './Card.css'
 
 const Card = ({ location, data }) => {
   const kinderYearData = Object.keys(data).map((year, i) => {
     return (
       <div key={i}>
-        <p>{year} : {data[year]}</p>
+        <p className="yearly-data">{year} : {data[year]}</p>
       </div>
     )
   })
   return(
-    <section>{kinderYearData}</section>
+    <section className="kinder-year-data">{kinderYearData}</section>
   )
 
 }

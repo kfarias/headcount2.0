@@ -17,9 +17,7 @@ class Search extends Component {
   }
 
   grabCard(searchData) {
-    //pass in our current input
-    // searchData.findAllMatches(this.state.input)
-    console.log(searchData.findAllMatches(this.state.input));;
+    searchData.findAllMatches(this.state.input);;
     //take the input and compare it to our locations
     //display locations that match/return true
   }
@@ -27,7 +25,7 @@ class Search extends Component {
   render(){
     return(
       <navbar>
-        <input placeholder='Enter a school district'
+        <input className='search-input' placeholder='Enter a school district'
           type='text' onChange={this.handleChange.bind(this)}></input>
         </navbar>
       )
