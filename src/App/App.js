@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import styles from './App.css';
 import './reset.css';
 
 import Card from '../Card/Card'
@@ -22,9 +22,11 @@ class App extends Component {
     const data = new DistrictRepository(kinderData).data;
     return (
       <div className='header'>
-        <h1>Welcome To Headcount 2.0</h1>
+        <h1 className='welcome'>Headcount 2.0</h1>
+        <div className='card-list'>
         <Search onChange={(e) => this.handleChange(e)}/>
-        <CardWrapper kindergartnerData={data}/>
+        <CardWrapper kindergartnerData={data} className="test"/>
+      </div>
       </div>
     );
   }
