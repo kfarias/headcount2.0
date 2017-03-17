@@ -41,14 +41,13 @@ class DistrictRepository {
   findAllMatches(input){
     const keys = Object.keys(this.data)
 
-    if(!input){
-      return keys;
+    if(input){
+      const upperCaseKeys = keys.filter(key =>
+        key.toUpperCase().includes(input.toUpperCase()))
+      return upperCaseKeys.map((location, index) =>
+        upperCaseKeys[index] = this.data[location])
     }
-
-    const upperCaseKeys = keys.filter(key => {
-      return key.toUpperCase().indexOf(input.toUpperCase()) > -1;
-    });
-    return upperCaseKeys
+    return keys.map(location => this.data[location]);
   }
 }
 
