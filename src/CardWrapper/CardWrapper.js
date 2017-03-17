@@ -1,24 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from '../Card/Card';
-import DistrictRepository from '../DistrictRepository';
 
 import styles from './CardWrapper.css';
 
-const CardWrapper = ({ kindergartnerData }) => {
-
-  const kinderKeysData = Object.keys(kindergartnerData).map((value, i) => {
-
-    return(
-      <div key={i} className='card-wrapper'>
-        <div className='location-data'>{value}</div>
-        <Card location={ value } data={kindergartnerData[value].data}/>
-      </div>
-    )
-
-  })
-
+const CardWrapper = ({ data }) => {
   return(
-    <section>{ kinderKeysData }</section>
+    <div className='card-wrapper'>
+      {data.map((value, i) => {
+        return <Card location={ value } locationData={ value.data } key={i}/>})
+      }
+      </div>
     )
   }
 

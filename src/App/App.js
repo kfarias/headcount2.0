@@ -13,21 +13,42 @@ import kinderData from '../../data/kindergartners_in_full_day_program.js';
 class App extends Component {
   constructor() {
     super()
-
+    this.state = {
+      data: {},
+      search: [],
+    }
   }
 
-  render() {
-    const data = new DistrictRepository(kinderData).data;
-    return (
-      <div className='header'>
-        <h1 className='welcome'>Headcount 2.0</h1>
-        <div className='card-list'>
-        <Search onChange={(e) => this.handleChange(e) } searchData={data}/>
-        <CardWrapper kindergartnerData={data} className="test"/>
-      </div>
-      </div>
-    );
+  searchResults(e){
+    console.log(this.state.data.findAllMatches);
+    this.setState({
+      search: this.state.data.findAllMatches(e.target.value)
+    })
   }
-}
 
-export default App;
+  componentWillMount() {
+    const data = new DistrictRepository(kinderData);
+    this.setState({
+      data: data
+      });
+    }
+
+    componentDidMount() {
+      this.setState({ search: this.state.data.findAllMatches() })
+    }
+
+    render() {
+      return (
+        <div className='header'>
+          <h1 className='welcome'>Headcount 2.0</h1>
+          <div className='card-list'>
+            <Search searchResults={(e) => this.searchResults(e) }/>
+            <CardWrapper data={this.state.search}
+                          className="test"/>
+          </div>
+        </div>
+      );
+    }
+  }
+
+  export default App;
