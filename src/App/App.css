@@ -1,9 +1,12 @@
-.body {
-  background-color: #EFEFEF;
+.card-list {
+  background-color: #011627;
 }
 
 .welcome {
+  background-image: url('http://pioneerinstitute.org/wp-content/uploads/apple-on-open-book.jpg');
   text-align: center;
   font-size: 2.5em;
   padding-top:20px;
+  color: white;
+  padding: 80px;
 }
