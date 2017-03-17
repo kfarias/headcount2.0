@@ -8,10 +8,20 @@ describe('App component', () => {
     it('renders without crashing', () => {
       const div = document.createElement('div');
     });
-    it.skip('has data in an object', () => {
+    it('has a state of data defaulted to an empty object', () => {
       const wrapper = shallow(<App/>);
-      console.log(wrapper)
-      expect(wrapper.props().data).to.be.defined;
-      expect(wrapper.props().search).to.be.defined;
+      expect(typeof wrapper.state().data).toBe('object');
+    });
+    it('has a state of search defaulted to an empty array', () => {
+      const wrapper = shallow(<App/>);
+      expect(wrapper.state().search).toEqual([]);
+    });
+    it('should have a component called CardWrapper', () => {
+      const wrapper = shallow(<App/>);
+      expect(wrapper.find('CardWrapper').length).toEqual(1)
+    });
+    it('should have a component called Search', () => {
+      const wrapper = shallow(<App/>);
+      expect(wrapper.find('Search').length).toEqual(1)
     });
   });
