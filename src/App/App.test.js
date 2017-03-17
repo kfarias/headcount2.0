@@ -4,11 +4,11 @@ import { shallow, mount } from 'enzyme';
 import App from './App';
 
 describe('App', ()=> {
-  it.skip('renders without crashing', () => {
+  it('renders without crashing', () => {
     const div = document.createElement('div');
-    const wrapper = shallow(<App/>);
-    expect(wrapper.find('div')).to.have.length(2);
-
   });
-
+  it.skip('renders as a div', () => {
+    const wrapper = shallow(<App/>);
+    expect(wrapper.find('div')).to.have.length(1);
+  });
 });
