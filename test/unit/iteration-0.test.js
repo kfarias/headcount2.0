@@ -1,7 +1,6 @@
 import DistrictRepository from '../../src/DistrictRepository.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
-
 describe('DistrictRepository iteration 0', () =>  {
 
   it('district has data in an object', () => {
@@ -13,5 +12,4 @@ describe('DistrictRepository iteration 0', () =>  {
     const district = new DistrictRepository(kinderData);
     expect(Object.keys(district.data).length).toBe(181);
   });
-
 });

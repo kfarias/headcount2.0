@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow, mount } from 'enzyme';
+
 import App from './App';
+// import { shallow, mount } from 'enzyme';
 
-describe('App', ()=> {
-  it.skip('renders without crashing', () => {
-    const div = document.createElement('div');
-    const wrapper = shallow(<App/>);
-    expect(wrapper.find('div')).to.have.length(2);
+describe('App component', () => {
+  describe('testing App component', () => {
 
+    it.skip('has data in an object', () => {
+      const wrapper = shallow(<App/>);
+      console.log(wrapper)
+      expect(wrapper.props().data).to.be.defined;
+      expect(wrapper.props().search).to.be.defined;
+    });
   });
-
 });
