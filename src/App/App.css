@@ -1,12 +1,12 @@
-.card-list {
+.card-section {
   background-color: #011627;
 }
 
 .welcome {
-  background-image: url('http://pioneerinstitute.org/wp-content/uploads/apple-on-open-book.jpg');
+  background-image: url('http://shop.crayola.com/dw/image/v2/AALB_PRD/on/demandware.static/-/Sites-crayola-storefront/default/dw43ef5ce2/images/category_headers/cat-header-crayonSoldiers.jpg?sw=1920&sh=716');
   text-align: center;
   font-size: 2.5em;
   padding-top:20px;
-  color: white;
+  color: #011627;
   padding: 80px;
 }
