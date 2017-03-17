@@ -1,19 +1,21 @@
 import React from 'react';
 import styles from './Card.css'
 
-const Card = ({ location, data }) => {
-  const kinderYearData = Object.keys(data).map((year, i) => {
+const Card = ({ location, locationData, key} ) => {
+  const pData = Object.keys(locationData).map((key, i) => {
+    return(
+              <p key={i} className='yearly-data'>{`${key} : ${locationData[key]}`}</p>
+    )
+  });
     return (
-      <div key={i}>
-        <p className='yearly-data'>{year} : {data[year]}</p>
+      <div key={key} className='district-card'>
+        <p className='location'>{location.location}</p>
+        { pData }
       </div>
     )
-  })
-  return(
-    <section className='kinder-year-data'>{kinderYearData}</section>
-  )
+  }
 
-}
+
 
 
 export default Card;
