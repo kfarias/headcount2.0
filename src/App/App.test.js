@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
-// import { shallow } from 'enzyme';
+// import { shallow, mount } from 'enzyme';
 
 describe('App component', () => {
   describe('testing App component', () => {
@@ -13,6 +13,5 @@ describe('App component', () => {
       expect(wrapper.props().data).to.be.defined;
       expect(wrapper.props().search).to.be.defined;
     });
-
   });
 });

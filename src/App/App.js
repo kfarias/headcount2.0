@@ -41,10 +41,12 @@ class App extends Component {
       return (
         <div className='header'>
           <h1 className='welcome'>Headcount 2.0</h1>
-          <div className='card-list'>
+          <div className='card-section'>
             <Search searchResults={(e) => this.searchResults(e) }/>
+            <div className='cards'>
             <CardWrapper data={this.state.search}
-                          className="test"/>
+                          className='test'/>
+            </div>
           </div>
         </div>
       );
