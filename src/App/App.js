@@ -41,13 +41,13 @@ class App extends Component {
       return (
         <div className='header'>
           <h1 className='welcome'>Headcount 2.0</h1>
-          <div className='card-section'>
+          <p className='card-section'>
             <Search searchResults={(e) => this.searchResults(e) }/>
-            <div className='cards'>
+            <p className='cards'>
             <CardWrapper data={this.state.search}
                           className='test'/>
-            </div>
-          </div>
+            </p>
+          </p>
         </div>
       );
     }
